@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/nav.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/css_slider.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center">
+                <div class="header-agile">
+                    <h1>
+                        <a class="navbar-brand editContent logo" href="index.html">
+                            <span class="fa fa-tint" aria-hidden="true"></span>H<SUB>2</SUB>O
+                        </a>
+                    </h1>
+                </div>
+                <div class="nav_w3ls">
+					<ul>
+							<li class="nav-item"><a class="nav-link" href="custhome">Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="venadd_procustview">Add more Products</a></li>
+
+
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </header><!--background-->
+<br>
+<style>
+	.previous {
+  color: white;
+}
+</style>
+        <h3 class="text-center mt-5">BOOKING DETAILS</h3>
+    <div class="bg-agile">
+	<div class="book-appointment">
+			<form action="confirm_booking" method="post">
+				{% csrf_token %}
+					<div class="register-top1">
+                        <form action="#" method="post" class="register-wthree">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Location" name="Location"
+                                            required="">
+                                    </div>
+										<div class="col-md-6 mt-md-0 mt-4">
+                                        <input class="form-control" type="text" placeholder="Name" name="name" required="">
+                                    	</div>
+									<br>
+									<br>
+											<div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Mobile no." name="phone"
+                                            required="">
+                                    </div>
+										<div class="col-md-6 mt-md-0 mt-4">
+                                        <input class="form-control" type="text" placeholder="Pincode" name="pin" required="">
+                                    	</div>
+					<br>
+									<br>
+											<div class="col-md-6">
+												<select class="form-control" name="Place" id="place">
+
+													<option value="" disabled="" selected="">Select City</option>
+                            						<option value="104">Ahmedabad</option>
+													<option value="1">Bangalore</option>
+													<option value="47">Chennai</option>
+													<option value="13">Coimbatore</option>
+													<option value="16">Delhi</option><option value="79">Goa</option>
+													<option value="3">Hyderabad</option><option value="5">Jaipur</option><option value="62">Kolkata</option>
+													<option value="8">Mumbai</option><option value="2">Mysore</option>
+													<option value="10">Pune</option></select>
+                                    </div>
+									<div class="col-md-6">
+												<select class="form-control" name="State" id="state">
+													<option value="" disabled="" selected="">Select State</option>
+                            						<option value="Andhra Pradesh">Andhra Pradesh</option><option value="Arunachal Pradesh">Arunachal Pradesh</option>
+													<option value="Assam">Assam</option><option value="Bihar">Bihar</option>
+													<option value="Delhi">Delhi</option>
+													<option value="Goa">Goa</option>
+													<option value="Gujarat">Gujarat</option><option value="Haryana">Haryana</option><option value="Himachal Pradesh">Himachal Pradesh</option>
+													<option value="Karnataka">Karnataka</option><option value="Kerala">Kerala</option>
+													<option value="Ladakh">Ladakh</option><option value="Lakshadweep">Lakshadweep</option><option value="Madhya Pradesh">Madhya Pradesh</option>
+													<option value="Maharashtra">Maharashtra</option>
+													<option value="Odisha">Odisha</option><option value="Punjab">Punjab</option>
+													<option value="Rajasthan">Rajasthan</option><option value="Sikkim">Sikkim</option><option value="Tamil Nadu">Tamil Nadu</option>
+													<option value="Uttarakhand">Uttarakhand</option>
+													<option value="Uttar Pradesh">Uttar Pradesh</option><option value="West Bengal">West Bengal</option></select>
+                                    </div>
+									<br>
+									<br>
+											<div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Buliding/Room no." name="room"
+                                            required="">
+                                    </div>
+									<div class="col-md-6 mt-md-0 mt-4">
+                                        <input class="form-control" type="text" placeholder="Road Name" name="rname" required="">
+                                    	</div>
+									<br>
+									<br>
+											<div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Alternate Mobile no." name="aphone"
+                                            required="">
+                                    </div>
+									<div class="col-md-6 mt-md-0 mt-4">
+                                        <input class="form-control" type="text" placeholder="Landmark" name="land" required="">
+                                    	</div>
+											<div class="row mt-3">
+                                			<div class="col-md-12">
+                                    <button type="submit" class="btn btn-w3layouts btn-block  bg-theme text-white w-100 font-weight-bold text-uppercase" onclick="return confirm('Are you sure ??')">Confirm Your Order</button>
+                                </div>
+                            </div>
+			</form>

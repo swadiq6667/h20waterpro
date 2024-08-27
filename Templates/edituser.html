@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+      {% load static %}
+
+<!--    <title>Water Home Maintenance & Service Flat Bootstrap Responsive website Template | Home :: w3layouts</title>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Water Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css"  rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- navigation -->
+    <link href="{% static 'assets/css/nav.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- banner slider -->
+    <link href="{% static 'assets/css/css_slider.css' %}" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+<style>
+
+    .div1 {
+        background-color: cadetblue;
+
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      overflow: hidden;
+      background-color:LightGray;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    th {
+      padding: 15px;
+      spacing:50px
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+     td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      color:black;
+    }
+
+    th {
+      background-color: black;;
+      color:lightblue;
+    }
+
+    tr:nth-child(even) {
+      background-color: LightGray;
+      color:LightGray;;
+    }
+    tr:nth-child(odd) {
+      background-color: LightGray;
+      color:LightGray;;
+    }
+
+    tr:hover {
+      background-color:grey;
+    }
+
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 12px;
+      }
+    }
+
+
+
+  </style>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center">
+                <div class="header-agile">
+                    <h1>
+                        <a class="navbar-brand editContent logo" href="index.html">
+                            <span class="fa fa-tint" aria-hidden="true"></span>H<SUB>2</SUB>O
+                        </a>
+                    </h1>
+                </div>
+                <div class="nav_w3ls">
+                    <nav>
+                        <input class="menu-btn" type="checkbox" id="menu-btn" />
+                        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                        <ul class="menu">
+                            <li class="nav-item"><a class="nav-link" href="custhome">Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="uprofile">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href="venadd_procustview">Products</a></li>
+                            <li class="dropdown nav-item">
+                                <a href="#" class="dropbtn nav-link">Dropdown</a>
+                                <div class="dropdown-content  show">
+                                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                                    <a href="#stats" class="nav-link">stats</a>
+                                    <a href="#services" class="nav-link">Resources</a>
+                                </div>
+                            </li>
+<!--                             <li class="nav-item"><a class="nav-link" href="../registration">Register</a></li>-->
+<!--                            <li class="nav-item"><a class="nav-link" href="../login">Login</a></li>-->
+                            <li class="nav-item "><a class="nav-link" href="custcontact">Contact</a></li>
+                            <li class="nav-item "><a class="nav-link" href="../">Logout</a></li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+  <main id="main">
+
+{% if messages %}
+    <div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {% for message in messages %}
+        <p {% if message.tags %} class="{{ message.tags }}" {% endif %}> <b>{{ message }}</b></p>
+        {% endfor %}
+    </div>
+{% endif %}
+      </div>
+      <br><br>
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+<table>
+	<tr>
+		<th>User Name</th>
+		<td><input type="text" name="username" value="{{data.username}}"></td>
+	</tr>
+	<tr>
+		<th>Email</th>
+		<td><input type="text" name="email" value="{{data.email}}"></td>
+	</tr>
+	<tr>
+		<th>Password</th>
+		<td><input type="text" name="password" value="{{data.password}}"></td>
+	</tr>
+	<tr>
+		<th>Mobile</th>
+		<td><input type="number" name="mobile" value="{{data.phoneno}}"></td>
+	</tr>
+</table>
+  <input class="btn-group btn btn-primary" style="margin-left:550px;"  type="submit">
+
+</form>
+<br><br>
+ <footer class="bg-theme1">
+        <div class="container">
+            <div class="cpy-right">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="wthree-social">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-facebook-f icon_facebook"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-twitter icon_twitter"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-dribbble icon_dribbble"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-google-plus icon_g_plus"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
+                        <p class="text-white">© 2018 Water. All rights reserved | Design by
+                            <a href="http://w3layouts.com"> W3layouts.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>

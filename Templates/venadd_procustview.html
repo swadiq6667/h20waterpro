@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/nav.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/css_slider.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="header d-lg-flex justify-content-between align-items-center">
+                <div class="header-agile">
+                    <h1>
+                        <a class="navbar-brand editContent logo" href="index.html">
+                            <span class="fa fa-tint" aria-hidden="true"></span>H<SUB>2</SUB>O
+                        </a>
+                    </h1>
+                </div>
+                <div class="nav_w3ls">
+                    <nav>
+                        <input class="menu-btn" type="checkbox" id="menu-btn" />
+                        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                        <ul class="menu">
+                            <li class="nav-item"><a class="nav-link" href="custhome">Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="venadd_procustview">Products</a></li>
+                            <li class="nav-item "><a class="nav-link" href="custcontact">Contact</a></li>
+                            <li class="nav-item "><a class="nav-link" href="../">Logout</a></li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h3 class="text-center mt-5">PRODUCTS</h3>
+        <div class="row mt-5">
+            {% csrf_token %}
+            {% for product in data %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.brand }}">
+                    <div class="card-body">
+                        <h3>{{ product.brand }}</h3>
+                        <p>{{ product.price }}</p>
+                        <p>{{ product.description }}</p>
+                        <a href="booking" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- footer -->
+    <!-- ... -->
+</body>
+</html>
+
+<!--    <footer class="bg-theme1">-->
+<!--        <div class="container">-->
+<!--            <div class="cpy-right">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-6">-->
+<!--                        <div class="wthree-social">-->
+<!--                            <ul>-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <span class="fa fa-facebook-f icon_facebook"></span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <span class="fa fa-twitter icon_twitter"></span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <span class="fa fa-dribbble icon_dribbble"></span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="#">-->
+<!--                                        <span class="fa fa-google-plus icon_g_plus"></span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">-->
+<!--                        <p class="text-white">© 2018 Water. All rights reserved | Design by-->
+<!--                            <a href="http://w3layouts.com"> W3layouts.</a>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal1" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/2.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal2" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/3.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal3" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/4.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup3 &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal4" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/5.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal5" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/6.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal6" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/7.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal7" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/1.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal8" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/2.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+<!--    &lt;!&ndash; popup&ndash;&gt;-->
+<!--    <div id="gal9" class="pop-overlay animate">-->
+<!--        <div class="popup">-->
+<!--            <img src="{% static 'assets/images/3.jpg' %}" alt="Popup Image" class="img-fluid" />-->
+<!--            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+<!--            <a class="close" href="#portfolio_wthree">&times;</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; //popup &ndash;&gt;-->
+</body>
+
+</html>
