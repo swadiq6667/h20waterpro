@@ -17,6 +17,7 @@ Including another URLconf
 #from django.contrib import admin
 from django.urls import path
 from.import views
+from .views import payment_page, payment_success
 
 urlpatterns = [
     path('',views.index),
@@ -45,5 +46,7 @@ urlpatterns = [
     path('addreviews', views.addreviews),
     path('uprofile', views.uprofile),
     path('edituser/<id2>', views.edituser),
-
+    path('about/', views.about, name='about'),
+    path("payment/", payment_page, name="payment_page"),
+    path("payment_success/", payment_success, name="payment_success"),
 ]

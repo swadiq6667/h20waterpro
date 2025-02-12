@@ -3,6 +3,10 @@ from.models import *
 from django.contrib import messages
 import datetime
 # import razorpay
+import razorpay
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from .models import Payment
 
 
 
@@ -274,3 +278,36 @@ def edituser(req, id2):
    else:
       data = custreg.objects.get(pk=id2)
       return render(req, 'edituser.html', {'data': data})
+
+
+def about(request):
+    return render(request, 'about.html')
+    
+
+
+# Razorpay Client Setup
+
+
+
+def payment_page(request):
+    client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+
+    order_amount = 100  # Example: ₹500 (amount in paise)
+    order_currency = 'INR'
+    order_receipt = 'order_rcptid_11'
+
+    # Create an order in Razorpay
+    try:
+        order = client.order.create({
+            "amount": order_amount,
+            "currency": order_currency,
+            "receipt": order_receipt,
+            "payment_capture": "1"
+        })
+    except razorpay.errors.BadRequestError:
+        return render(request, "error.html", {"message": "Authentication failed. Check API credentials."})
+
+    return render(request, "payment.html", {"order": order, "key": settings.RAZORPAY_KEY_ID})
+
+def payment_success(request):
+    return render(request, "payment_success.html")    

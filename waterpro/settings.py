@@ -121,8 +121,15 @@ USE_TZ = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 STATIC_URL = 'static/'
 import os
 STATICFILES_DIRS=[os.path.join(BASE_DIR, 'static')]
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
+
+
+# Razorpay Configuration
+RAZORPAY_KEY_ID =  'rzp_test_FIZcMWBmGnqoqG' # Replace with your Razorpay Key ID
+RAZORPAY_KEY_SECRET = 'hwkP8FNx8gACO7YNZfQvUY1t' # Replace with your Razorpay Key Secret

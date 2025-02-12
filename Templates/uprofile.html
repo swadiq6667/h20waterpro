@@ -2,13 +2,10 @@
 <html lang="zxx">
 
 <head>
-      {% load static %}
-
-<!--    <title>Water Home Maintenance & Service Flat Bootstrap Responsive website Template | Home :: w3layouts</title>-->
+    {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="keywords" content="Water Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <meta name="keywords" content="Water Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -19,7 +16,7 @@
         }
     </script>
     <!-- Custom Theme files -->
-    <link href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css"  rel="stylesheet" media="all">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet" media="all">
     <link href="{% static 'assets/css/style.css' %}" type="text/css" rel="stylesheet" media="all">
     <!-- navigation -->
     <link href="{% static 'assets/css/nav.css' %}" type="text/css" rel="stylesheet" media="all">
@@ -27,65 +24,119 @@
     <link href="{% static 'assets/css/css_slider.css' %}" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
     <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .profile-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .profile-card h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease-in-out;
+        }
+
+        .profile-card .card-body {
+            padding: 20px;
+        }
+
+        .profile-card .row {
+            margin-bottom: 15px;
+        }
+
+        .profile-card .row .col-sm-5 {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .profile-card .row .col-sm-15 {
+            color: #777;
+        }
+
+        .profile-card .btn-info {
+            background-color: #17a2b8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-card .btn-info:hover {
+            background-color: #138496;
+        }
+
+        .profile-card .btn-info:active {
+            background-color: #117a8b;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer .wthree-social ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer .wthree-social ul li {
+            margin: 0 10px;
+        }
+
+        footer .wthree-social ul li a {
+            color: #fff;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        footer .wthree-social ul li a:hover {
+            color: #17a2b8;
+        }
+    </style>
 </head>
-<style>
-
-    .div1 {
-        background-color: cadetblue;
-
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      overflow: hidden;
-      background-color:LightGray;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-    th {
-      padding: 15px;
-      spacing:50px
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-     td {
-      padding: 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-      color:black;
-    }
-
-    th {
-      background-color: black;;
-      color:lightblue;
-    }
-
-    tr:nth-child(even) {
-      background-color: LightGray;
-      color:LightGray;;
-    }
-    tr:nth-child(odd) {
-      background-color: LightGray;
-      color:LightGray;;
-    }
-
-    tr:hover {
-      background-color:grey;
-    }
-
-    @media (max-width: 600px) {
-      th, td {
-        font-size: 12px;
-      }
-    }
-
-
-
-  </style>
 
 <body>
     <!-- header -->
@@ -107,103 +158,74 @@
                             <li class="nav-item"><a class="nav-link" href="custhome">Home</a></li>
                             <li class="nav-item active"><a class="nav-link" href="uprofile">Profile</a></li>
                             <li class="nav-item"><a class="nav-link" href="venadd_procustview">Products</a></li>
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropbtn nav-link">Dropdown</a>
-                                <div class="dropdown-content  show">
-                                    <a class="nav-link" href="#portfolio">Portfolio</a>
-                                    <a href="#stats" class="nav-link">stats</a>
-                                    <a href="#services" class="nav-link">Resources</a>
-                                </div>
-                            </li>
-<!--                             <li class="nav-item"><a class="nav-link" href="../registration">Register</a></li>-->
-<!--                            <li class="nav-item"><a class="nav-link" href="../login">Login</a></li>-->
                             <li class="nav-item "><a class="nav-link" href="custcontact">Contact</a></li>
                             <li class="nav-item "><a class="nav-link" href="../">Logout</a></li>
-
-
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-  <main id="main">
 
-{% if messages %}
-    <div class="alert alert-warning alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {% for message in messages %}
-        <p {% if message.tags %} class="{{ message.tags }}"{% endif %}><b>{{ message }}</b></p>
-        {% endfor %}
-    </div>
-{% endif %}
+    <main id="main">
+        {% if messages %}
+        <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {% for message in messages %}
+            <p {% if message.tags %} class="{{ message.tags }}"{% endif %}><b>{{ message }}</b></p>
+            {% endfor %}
+        </div>
+        {% endif %}
 
-      <!-- //short-->
-      <!--contact -->
+        <div class="profile-card animate__animated animate__fadeIn">
+            <h2>{{user.username}}</h2>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-15 text-secondary">
+                        {{user.name}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-15 text-secondary">
+                        {{user.email}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h6 class="mb-0">Password</h6>
+                    </div>
+                    <div class="col-sm-15 text-secondary">
+                        {{user.password}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h6 class="mb-0">Mobile</h6>
+                    </div>
+                    <div class="col-sm-15 text-secondary">
+                        {{user.phoneno}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-15">
+                        <a class="btn btn-info" style="margin-left:150px;" target="__blank" href="edituser/{{user.pk}}">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<!--<div class="mt-3">-->
-      <br>
-      <center><h2>{{user.username}}</h2></center>
-<br>
-
-</div>
-</div>
-</div>
-
-</div>
-
-</div>
-    <div class="col-md-8">
-<div class="card mb-3" style="margin-left:450px;">
-<div class="card-body">
-<div class="row">
-<div class="col-sm-5">
-<h6 class="mb-0">Full Name</h6>
-</div>
-<div class="col-sm-15 text-secondary">
-{{user.name}}
-</div>
-</div>
-<hr>
-<div class="row">
-<div class="col-sm-5">
-    <h6 class="mb-0">Email</h6>
-</div>
-<div class="col-sm-15 text-secondary">
-<!--<a  class="cf_email" data-cfemail="f99f9089b9938c92948c91d79895">-->
-{{user.email}}
-</div>
-</div>
-<hr>
-<div class="row">
-<div class="col-sm-5">
-<h6 class="mb-0">Password</h6>
-</div>
-<div class="col-sm-15 text-secondary">
-{{user.password}}
-</div>
-</div>
-<hr>
-<div class="row">
-<div class="col-sm-5">
-<h6 class="mb-0">Mobile</h6>
-</div>
-<div class="col-sm-15 text-secondary">
-{{user.phoneno}}
-</div>
-    </div>
-<hr>
-<hr>
-<div class="row">
-<div class="col-sm-15">
-<a class="btn btn-info " style="margin-left:150px;" target="__blank" href="edituser/{{user.pk}}">Edit</a>
-</div>
-</div>
-</div>
-</div>
-    </div>
-</div>
-          <footer class="bg-theme1">
+    <footer class="bg-theme1">
         <div class="container">
             <div class="cpy-right">
                 <div class="row">
@@ -242,3 +264,6 @@
             </div>
         </div>
     </footer>
+</body>
+
+</html>

@@ -60,3 +60,16 @@ class Review(models.Model):
     review = models.TextField()
     def __str__(self):
         return self.review
+
+
+
+
+class Payment(models.Model):
+    order_id = models.CharField(max_length=100)
+    payment_id = models.CharField(max_length=100, blank=True, null=True)
+    amount = models.FloatField()
+    status = models.CharField(max_length=20, default="Pending")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Order {self.order_id} - {self.status}"
